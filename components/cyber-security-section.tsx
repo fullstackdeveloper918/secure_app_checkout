@@ -66,7 +66,13 @@ export default function CyberSecuritySection() {
               <div className="absolute inset-0 bg-gradient-to-r from-red-300 to-purple-300 rounded-lg opacity-20 blur-2xl"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-[80%] h-[80%] rounded-lg overflow-hidden border border-red-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                  <Image src="/images/cybersecurity.png" style={{objectFit:"contain"}}   alt="Cybersecurity" fill className="object-cover" />
+                  <Image
+                    src="/images/cybersecurity.png"
+                    style={{ objectFit: "contain" }}
+                    alt="Cybersecurity"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 

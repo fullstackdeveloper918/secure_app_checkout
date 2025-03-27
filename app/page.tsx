@@ -13,6 +13,7 @@ import FinalCTA from "@/components/final-cta"
 import Footer from "@/components/footer"
 import LoadingScreen from "@/components/loading-screen"
 import FloatingElements from "@/components/floating-elements"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -31,33 +32,35 @@ export default function Home() {
   }
 
   return (
-    <main className="relative overflow-hidden bg-white">
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('/images/stars-light.png')] bg-repeat opacity-30"></div>
-      </div>
+    <ThemeProvider attribute="class" defaultTheme="light">
+      <main className="relative overflow-hidden bg-background">
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-[url('/images/stars-light.png')] bg-repeat opacity-30 dark:opacity-60"></div>
+        </div>
 
-      <Navbar />
+        <Navbar />
 
-      <FloatingElements />
+        <FloatingElements />
 
-      <HeroSection />
+        <HeroSection />
 
-      <AboutSection />
+        <AboutSection />
 
-      <WebDevSection />
+        <WebDevSection />
 
-      <ITServicesSection />
+        <ITServicesSection />
 
-      <CloudSection />
+        <CloudSection />
 
-      <CyberSecuritySection />
+        <CyberSecuritySection />
 
-      <SupportSection />
+        <SupportSection />
 
-      <FinalCTA />
+        <FinalCTA />
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </ThemeProvider>
   )
 }
 

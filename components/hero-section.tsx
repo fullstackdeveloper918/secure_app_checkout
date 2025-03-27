@@ -16,7 +16,7 @@ export default function HeroSection() {
   const planetY = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 50]);
   const astronautY = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const astronautRotate = useTransform(scrollYProgress, [0, 1], [0, 10]);
+  const astronautRotate = useTransform(scrollYProgress, [0, 1], [0, 20]);
 
   return (
     <section
@@ -25,24 +25,25 @@ export default function HeroSection() {
       id="hero"
     >
       <motion.div
-        className="absolute left-1/6 bottom-[15%] w-[600px] h-[600px]"
+        className="absolute left-1/6 bottom-[-10%] w-[600px] h-[600px]"
         style={{
           y: planetY,
           scale: planetScale,
-          left: "5%",
+          left: "0%",
         }}
       >
         <Image
           src="/images/planet-blue.png"
           alt="Planet"
-          width={600}
-          height={600}
+          width={500}
+          height={500}
           className="object-contain"
+          priority
         />
       </motion.div>
 
       <motion.div
-        className="absolute right-0 bottom-0 w-[400px] h-[400px]"
+        className="absolute right-[-10%] bottom-0 w-[400px] h-[400px]"
         style={{
           y: astronautY,
           rotate: astronautRotate,
@@ -51,9 +52,10 @@ export default function HeroSection() {
         <Image
           src="/images/astronaut-white.png"
           alt="Astronaut"
-          width={400}
-          height={400}
+          width={200}
+          height={200}
           className="object-contain"
+          priority
         />
       </motion.div>
 
@@ -72,11 +74,13 @@ export default function HeroSection() {
               Secure in This Galaxy
             </span>
             <br />
-            <span className="text-blue-900">—and the Next</span>
+            <span className="text-foreground dark:text-white">
+              —and the Next
+            </span>
           </motion.h1>
 
           <motion.p
-            className="text-xl text-blue-800 mb-4"
+            className="text-xl text-foreground dark:text-blue-200 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -86,7 +90,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.p
-            className="text-blue-700 mb-8 max-w-2xl"
+            className="text-foreground/80 dark:text-blue-300 mb-8 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -112,7 +116,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
     </section>
   );
 }

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { Palette, Smartphone, Search, Code } from "lucide-react"
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { Palette, Smartphone, Search, Code } from "lucide-react";
 
 export default function WebDevSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,7 +17,7 @@ export default function WebDevSection() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -26,10 +26,14 @@ export default function WebDevSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden" id="web-development">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden"
+      id="web-development"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50 to-transparent"></div>
 
       <motion.div
@@ -39,18 +43,18 @@ export default function WebDevSection() {
           rotate: [0, 5, 0, -5, 0],
         }}
         transition={{
-          y: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          rotate: { duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+          y: {
+            duration: 4,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          rotate: {
+            duration: 6,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
         }}
-      >
-        <Image
-          src="/images/astronaut.png"
-          alt="Astronaut"
-          width={150}
-          height={150}
-          className="w-full h-full object-contain"
-        />
-      </motion.div>
+      ></motion.div>
 
       <div className="container mx-auto relative z-10">
         <motion.div
@@ -65,13 +69,16 @@ export default function WebDevSection() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">
-              One Small Step for Your Brand, One Giant Leap for Your Online Presence
+              One Small Step for Your Brand, One Giant Leap for Your Online
+              Presence
             </h2>
 
             <p className="text-blue-700 mb-8">
-              Every expedition to new frontiers begins with a reliable launchpad—and your website is no exception. Our
-              web development team designs visually captivating, high-performing platforms that capture your audience's
-              imagination and hold strong, no matter how far you travel. Because when your ambition spans galaxies, your
+              Every expedition to new frontiers begins with a reliable
+              launchpad—and your website is no exception. Our web development
+              team designs visually captivating, high-performing platforms that
+              capture your audience's imagination and hold strong, no matter how
+              far you travel. Because when your ambition spans galaxies, your
               website needs to keep pace.
             </p>
 
@@ -85,7 +92,8 @@ export default function WebDevSection() {
                     Cosmic Design Aesthetic
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    We fuse creativity with function to build unique, user-friendly interfaces.
+                    We fuse creativity with function to build unique,
+                    user-friendly interfaces.
                   </p>
                 </div>
               </div>
@@ -98,7 +106,9 @@ export default function WebDevSection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-purple-700 transition-colors">
                     Mobile-Responsive
                   </h3>
-                  <p className="text-blue-700 text-sm">Your website looks and operates flawlessly on any device.</p>
+                  <p className="text-blue-700 text-sm">
+                    Your website looks and operates flawlessly on any device.
+                  </p>
                 </div>
               </div>
 
@@ -111,7 +121,8 @@ export default function WebDevSection() {
                     Search Visibility
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Enjoy SEO-friendly architecture that helps your site shine among the stars.
+                    Enjoy SEO-friendly architecture that helps your site shine
+                    among the stars.
                   </p>
                 </div>
               </div>
@@ -125,19 +136,29 @@ export default function WebDevSection() {
                     Future-Ready Tech
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Our code is built to evolve—so your site can boldly go wherever your business leads.
+                    Our code is built to evolve—so your site can boldly go
+                    wherever your business leads.
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="order-1 md:order-2 relative">
+          <motion.div
+            variants={itemVariants}
+            className="order-1 md:order-2 relative"
+          >
             <div className="relative h-[400px] w-full">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-300 to-blue-300 rounded-lg opacity-20 blur-2xl"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-[80%] h-[80%] rounded-lg overflow-hidden border border-purple-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                  <Image src="/images/web-development.png" style={{objectFit:"contain", padding:"20px"}} alt="Web Development" fill className="object-cover" />
+                  <Image
+                    src="/images/web-development.png"
+                    style={{ objectFit: "contain", padding: "20px" }}
+                    alt="Web Development"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 
@@ -148,6 +169,5 @@ export default function WebDevSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

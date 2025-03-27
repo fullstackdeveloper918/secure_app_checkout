@@ -9,3 +9,4 @@ routes:
     dest: /static/$1
   - src: /(.*)
     dest: /$1
+
