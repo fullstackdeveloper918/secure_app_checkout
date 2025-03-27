@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { Upload, Scale, Database, Users } from "lucide-react"
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { Upload, Scale, Database, Users } from "lucide-react";
 
 export default function CloudSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,7 +17,7 @@ export default function CloudSection() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -26,10 +26,14 @@ export default function CloudSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden" id="cloud">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden"
+      id="cloud"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-50 to-transparent"></div>
 
       <motion.div
@@ -39,11 +43,25 @@ export default function CloudSection() {
           y: [0, -20, 0],
         }}
         transition={{
-          rotate: { duration: 60, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-          y: { duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+          rotate: {
+            duration: 60,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          },
+          y: {
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
         }}
       >
-        <Image src="/images/earth.png" alt="Earth" width={250} height={250} className="w-full h-full object-contain" />
+        <Image
+          src="/images/earth.png"
+          alt="Earth"
+          width={250}
+          height={250}
+          className="w-full h-full object-contain"
+        />
       </motion.div>
 
       <motion.div
@@ -54,9 +72,21 @@ export default function CloudSection() {
           rotate: [0, 10, 0, -10, 0],
         }}
         transition={{
-          y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          x: { duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          rotate: { duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+          y: {
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          x: {
+            duration: 5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          rotate: {
+            duration: 7,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
         }}
       >
         <Image
@@ -80,13 +110,17 @@ export default function CloudSection() {
               Cloud Solutions
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">Soar Above the Clouds—Securely</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">
+              Soar Above the Clouds—Securely
+            </h2>
 
             <p className="text-blue-700 mb-8">
-              Elevate your operations to cosmic heights with our tailored cloud solutions. Whether you're migrating
-              data, optimizing resources, or seeking a flexible infrastructure that can expand at hyperspeed, Secure365
-              helps you master this frontier. By blending agility with airtight security, we ensure your cloud
-              environment remains a safe haven—ready to scale as fast as you can dream.
+              Elevate your operations to cosmic heights with our tailored cloud
+              solutions. Whether you're migrating data, optimizing resources, or
+              seeking a flexible infrastructure that can expand at hyperspeed,
+              Secure365 helps you master this frontier. By blending agility with
+              airtight security, we ensure your cloud environment remains a safe
+              haven—ready to scale as fast as you can dream.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -99,7 +133,8 @@ export default function CloudSection() {
                     Cloud Migration
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Seamless transition of your data and applications to the cloud.
+                    Seamless transition of your data and applications to the
+                    cloud.
                   </p>
                 </div>
               </div>
@@ -112,7 +147,9 @@ export default function CloudSection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-cyan-700 transition-colors">
                     Scalability
                   </h3>
-                  <p className="text-blue-700 text-sm">Flexible resources that grow with your business needs.</p>
+                  <p className="text-blue-700 text-sm">
+                    Flexible resources that grow with your business needs.
+                  </p>
                 </div>
               </div>
 
@@ -124,7 +161,9 @@ export default function CloudSection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-cyan-700 transition-colors">
                     Secure Data Storage
                   </h3>
-                  <p className="text-blue-700 text-sm">Protected cloud storage with automated backup solutions.</p>
+                  <p className="text-blue-700 text-sm">
+                    Protected cloud storage with automated backup solutions.
+                  </p>
                 </div>
               </div>
 
@@ -136,7 +175,9 @@ export default function CloudSection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-cyan-700 transition-colors">
                     Collaboration Tools
                   </h3>
-                  <p className="text-blue-700 text-sm">Real-time collaboration platforms for your team.</p>
+                  <p className="text-blue-700 text-sm">
+                    Real-time collaboration platforms for your team.
+                  </p>
                 </div>
               </div>
             </div>
@@ -147,7 +188,12 @@ export default function CloudSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-blue-300 rounded-lg opacity-20 blur-2xl"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-[80%] h-[80%] rounded-lg overflow-hidden border border-cyan-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                  <Image src="/images/cloud-solutions.png" alt="Cloud Solutions" fill className="object-cover" />
+                  <Image
+                    src="/images/cloud-solutions.png"
+                    alt="Cloud Solutions"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 
@@ -158,6 +204,5 @@ export default function CloudSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { Rocket } from "lucide-react"
-import { useTheme } from "next-themes"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function LoadingScreen() {
-  const [progress, setProgress] = useState(0)
-  const { theme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [progress, setProgress] = useState(0);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
 
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval)
-          return 100
+          clearInterval(interval);
+          return 100;
         }
-        return prev + 1
-      })
-    }, 30)
+        return prev + 1;
+      });
+    }, 30);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <div
@@ -46,8 +46,16 @@ export default function LoadingScreen() {
             y: [0, -10, 0],
           }}
           transition={{
-            rotate: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-            y: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+            rotate: {
+              duration: 4,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            },
+            y: {
+              duration: 2,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            },
           }}
         >
           <Rocket className="h-16 w-16 text-blue-600 dark:text-blue-400" />
@@ -68,6 +76,5 @@ export default function LoadingScreen() {
         <p className="text-blue-600 dark:text-blue-400">{progress}%</p>
       </motion.div>
     </div>
-  )
+  );
 }
-

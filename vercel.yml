@@ -1,7 +1,7 @@
 version: 2
 builds:
   - src: package.json
-    use: '@vercel/next'
+    use: "@vercel/next"
 routes:
   - src: /_next/(.*)
     dest: /_next/$1
@@ -9,4 +9,3 @@ routes:
     dest: /static/$1
   - src: /(.*)
     dest: /$1
-

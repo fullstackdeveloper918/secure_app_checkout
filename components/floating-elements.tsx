@@ -28,7 +28,7 @@ export default function FloatingElements() {
   const rocketY = useTransform(
     scrollY,
     [0, windowHeight * 5],
-    [windowHeight * 0.8, -windowHeight * 0.5]
+    [windowHeight * 0.8, -windowHeight * 0.5],
   );
   const rocketX = useTransform(
     scrollY,
@@ -40,7 +40,7 @@ export default function FloatingElements() {
       windowHeight * 4,
       windowHeight * 5,
     ],
-    ["10%", "20%", "70%", "30%", "80%", "50%"]
+    ["10%", "20%", "70%", "30%", "80%", "50%"],
   );
   const rocketRotate = useTransform(
     scrollY,
@@ -52,14 +52,14 @@ export default function FloatingElements() {
       windowHeight * 4,
       windowHeight * 5,
     ],
-    [0, 15, -15, 30, -30, 0]
+    [0, 15, -15, 30, -30, 0],
   );
 
   // Small astronaut animation
   const astronautY = useTransform(
     scrollY,
     [0, windowHeight * 5],
-    [windowHeight * 0.2, windowHeight * 3]
+    [windowHeight * 0.2, windowHeight * 3],
   );
   const astronautX = useTransform(
     scrollY,
@@ -71,7 +71,7 @@ export default function FloatingElements() {
       windowHeight * 4,
       windowHeight * 5,
     ],
-    ["80%", "70%", "20%", "60%", "30%", "70%"]
+    ["80%", "70%", "20%", "60%", "30%", "70%"],
   );
   const astronautRotate = useTransform(
     scrollY,
@@ -83,7 +83,7 @@ export default function FloatingElements() {
       windowHeight * 4,
       windowHeight * 5,
     ],
-    [0, -20, 20, -40, 40, 0]
+    [0, -20, 20, -40, 40, 0],
   );
 
   // Earth animation
@@ -91,13 +91,13 @@ export default function FloatingElements() {
   const earthY = useTransform(
     scrollY,
     [0, windowHeight * 5],
-    [windowHeight * 1.5, windowHeight * 4]
+    [windowHeight * 1.5, windowHeight * 4],
   );
   const earthX = useTransform(scrollY, [0, windowHeight * 5], ["10%", "80%"]);
   const earthOpacity = useTransform(
     scrollY,
     [windowHeight, windowHeight * 1.5, windowHeight * 3, windowHeight * 4.5],
-    [0, 1, 1, 0]
+    [0, 1, 1, 0],
   );
 
   if (!mounted) return null;

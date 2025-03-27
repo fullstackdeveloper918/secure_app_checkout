@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { Server, Activity, Network, HardDrive } from "lucide-react"
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { Server, Activity, Network, HardDrive } from "lucide-react";
 
 export default function ITServicesSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,7 +17,7 @@ export default function ITServicesSection() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -26,10 +26,14 @@ export default function ITServicesSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden" id="it-services">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden"
+      id="it-services"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-transparent"></div>
 
       <motion.div
@@ -40,9 +44,21 @@ export default function ITServicesSection() {
           rotate: [0, 10, 0, -10, 0],
         }}
         transition={{
-          y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          x: { duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          rotate: { duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+          y: {
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          x: {
+            duration: 5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          rotate: {
+            duration: 7,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
         }}
       >
         <Image
@@ -82,17 +98,22 @@ export default function ITServicesSection() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <div className="inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm text-blue-700 mb-4">IT Services</div>
+            <div className="inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm text-blue-700 mb-4">
+              IT Services
+            </div>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">
-              Keeping You Online, Operational, and Optimized—Across All Frontiers
+              Keeping You Online, Operational, and Optimized—Across All
+              Frontiers
             </h2>
 
             <p className="text-blue-700 mb-8">
-              From this galaxy to the next, our IT Services provide the steady hand you need at mission control. We keep
-              your systems in perfect orbit with 24/7 monitoring, swift troubleshooting, and strategic upgrades. So
-              whether your business is scaling up or venturing into uncharted territory, you'll have the support you
-              need at every turn.
+              From this galaxy to the next, our IT Services provide the steady
+              hand you need at mission control. We keep your systems in perfect
+              orbit with 24/7 monitoring, swift troubleshooting, and strategic
+              upgrades. So whether your business is scaling up or venturing into
+              uncharted territory, you'll have the support you need at every
+              turn.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -105,7 +126,8 @@ export default function ITServicesSection() {
                     Managed IT & Infrastructure
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Complete oversight and management of your technology ecosystem.
+                    Complete oversight and management of your technology
+                    ecosystem.
                   </p>
                 </div>
               </div>
@@ -119,7 +141,8 @@ export default function ITServicesSection() {
                     Proactive Monitoring
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    24/7 surveillance to prevent issues before they impact your operations.
+                    24/7 surveillance to prevent issues before they impact your
+                    operations.
                   </p>
                 </div>
               </div>
@@ -132,7 +155,9 @@ export default function ITServicesSection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-blue-700 transition-colors">
                     Network Security
                   </h3>
-                  <p className="text-blue-700 text-sm">Robust protection for your critical network infrastructure.</p>
+                  <p className="text-blue-700 text-sm">
+                    Robust protection for your critical network infrastructure.
+                  </p>
                 </div>
               </div>
 
@@ -145,7 +170,8 @@ export default function ITServicesSection() {
                     Business Continuity
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Disaster recovery planning to ensure your business stays operational in any scenario.
+                    Disaster recovery planning to ensure your business stays
+                    operational in any scenario.
                   </p>
                 </div>
               </div>
@@ -154,6 +180,5 @@ export default function ITServicesSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

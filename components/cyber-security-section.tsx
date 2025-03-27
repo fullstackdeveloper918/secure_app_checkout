@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { ShieldAlert, Lock, Search, Shield } from "lucide-react"
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { ShieldAlert, Lock, Search, Shield } from "lucide-react";
 
 export default function CyberSecuritySection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,7 +17,7 @@ export default function CyberSecuritySection() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -26,10 +26,14 @@ export default function CyberSecuritySection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden" id="security">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden"
+      id="security"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-red-50 to-transparent"></div>
 
       <motion.div
@@ -40,9 +44,21 @@ export default function CyberSecuritySection() {
           rotate: [0, -10, 0, 10, 0],
         }}
         transition={{
-          y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          x: { duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-          rotate: { duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+          y: {
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          x: {
+            duration: 5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
+          rotate: {
+            duration: 7,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          },
         }}
       >
         <Image
@@ -61,7 +77,10 @@ export default function CyberSecuritySection() {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
-          <motion.div variants={itemVariants} className="relative order-2 md:order-1">
+          <motion.div
+            variants={itemVariants}
+            className="relative order-2 md:order-1"
+          >
             <div className="relative h-[400px] w-full">
               <div className="absolute inset-0 bg-gradient-to-r from-red-300 to-purple-300 rounded-lg opacity-20 blur-2xl"></div>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -82,15 +101,21 @@ export default function CyberSecuritySection() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="order-1 md:order-2">
-            <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">Cybersecurity</div>
+            <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+              Cybersecurity
+            </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">Protecting Your Orbit and Beyond</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-900">
+              Protecting Your Orbit and Beyond
+            </h2>
 
             <p className="text-blue-700 mb-8">
-              Just like rogue asteroids in deep space, cyber threats can appear from nowhere. Our cybersecurity experts
-              deploy advanced defense systems to keep you safe from attacks—no matter the galaxy they come from. With
-              real-time monitoring, proactive protection, and rapid incident response, Secure365 ensures your mission
-              stays on track, unimpeded by unseen dangers.
+              Just like rogue asteroids in deep space, cyber threats can appear
+              from nowhere. Our cybersecurity experts deploy advanced defense
+              systems to keep you safe from attacks—no matter the galaxy they
+              come from. With real-time monitoring, proactive protection, and
+              rapid incident response, Secure365 ensures your mission stays on
+              track, unimpeded by unseen dangers.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -103,7 +128,8 @@ export default function CyberSecuritySection() {
                     Threat Detection
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Advanced systems to identify and neutralize threats in real-time.
+                    Advanced systems to identify and neutralize threats in
+                    real-time.
                   </p>
                 </div>
               </div>
@@ -117,7 +143,8 @@ export default function CyberSecuritySection() {
                     Data Encryption
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Military-grade encryption to protect your sensitive information.
+                    Military-grade encryption to protect your sensitive
+                    information.
                   </p>
                 </div>
               </div>
@@ -131,7 +158,8 @@ export default function CyberSecuritySection() {
                     Security Audits
                   </h3>
                   <p className="text-blue-700 text-sm">
-                    Comprehensive vulnerability assessments to identify weak points.
+                    Comprehensive vulnerability assessments to identify weak
+                    points.
                   </p>
                 </div>
               </div>
@@ -144,7 +172,9 @@ export default function CyberSecuritySection() {
                   <h3 className="text-lg font-semibold mb-1 text-blue-900 group-hover:text-red-700 transition-colors">
                     Proactive Defense
                   </h3>
-                  <p className="text-blue-700 text-sm">Strategic planning to prevent attacks before they happen.</p>
+                  <p className="text-blue-700 text-sm">
+                    Strategic planning to prevent attacks before they happen.
+                  </p>
                 </div>
               </div>
             </div>
@@ -152,6 +182,5 @@ export default function CyberSecuritySection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

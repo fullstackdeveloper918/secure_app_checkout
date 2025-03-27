@@ -1,44 +1,46 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Moon, Rocket, Sun } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useTheme } from "next-themes"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Moon, Rocket, Sun } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // After mounting, we can safely show the UI
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10
+      const isScrolled = window.scrollY > 10;
       if (isScrolled !== scrolled) {
-        setScrolled(isScrolled)
+        setScrolled(isScrolled);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [scrolled])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrolled]);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-transparent",
+        scrolled
+          ? "bg-background/80 backdrop-blur-md shadow-md"
+          : "bg-transparent",
         theme === "dark" && "dark:bg-[#142148]/80",
       )}
       initial={{ y: -100 }}
@@ -68,19 +70,34 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#about" className="text-foreground hover:text-blue-600 transition-colors">
+          <Link
+            href="#about"
+            className="text-foreground hover:text-blue-600 transition-colors"
+          >
             About
           </Link>
-          <Link href="#web-development" className="text-foreground hover:text-blue-600 transition-colors">
+          <Link
+            href="#web-development"
+            className="text-foreground hover:text-blue-600 transition-colors"
+          >
             Web Development
           </Link>
-          <Link href="#it-services" className="text-foreground hover:text-blue-600 transition-colors">
+          <Link
+            href="#it-services"
+            className="text-foreground hover:text-blue-600 transition-colors"
+          >
             IT Services
           </Link>
-          <Link href="#cloud" className="text-foreground hover:text-blue-600 transition-colors">
+          <Link
+            href="#cloud"
+            className="text-foreground hover:text-blue-600 transition-colors"
+          >
             Cloud Solutions
           </Link>
-          <Link href="#security" className="text-foreground hover:text-blue-600 transition-colors">
+          <Link
+            href="#security"
+            className="text-foreground hover:text-blue-600 transition-colors"
+          >
             Cybersecurity
           </Link>
         </nav>
@@ -108,6 +125,5 @@ export default function Navbar() {
         </div>
       </div>
     </motion.header>
-  )
+  );
 }
-
