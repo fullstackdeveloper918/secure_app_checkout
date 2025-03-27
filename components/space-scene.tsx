@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, PerspectiveCamera } from "@react-three/drei";
-import type * as THREE from "three";
+import * as THREE from "three";
 
 interface SpaceSceneProps {
   scrollProgress: number;
@@ -49,14 +49,15 @@ export default function SpaceScene({ scrollProgress }: SpaceSceneProps) {
             metalness={0.7}
           />
         </mesh>
-        <mesh position={[0, -2.5, 0]}>
-          <coneGeometry args={[0.5, 1, 16]} rotation={[Math.PI, 0, 0]} />
+        <mesh position={[0, -2.5, 0]} rotation={[Math.PI, 0, 0]}>
+          <coneGeometry args={[0.5, 1, 16]} />
           <meshStandardMaterial
             color="#3b82f6"
             roughness={0.3}
             metalness={0.7}
           />
         </mesh>
+
         <group position={[0, -1.5, 0]}>
           <mesh position={[0.7, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
             <cylinderGeometry args={[0.1, 0.1, 1, 16]} />
